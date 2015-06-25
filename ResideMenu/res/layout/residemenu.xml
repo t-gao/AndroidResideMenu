@@ -3,48 +3,65 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
-            android:id="@+id/iv_background"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
     <ImageView
-            android:id="@+id/iv_shadow"
-            android:background="@drawable/shadow"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:scaleType="fitXY"/>
+        android:id="@+id/iv_shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/shadow"
+        android:scaleType="fitXY" />
 
-    <ScrollView
+    <FrameLayout
+        android:id="@+id/view_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|top">
+
+        <ScrollView
             android:id="@+id/sv_left_menu"
-            android:scrollbars="none"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
             android:paddingLeft="30dp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center_vertical">
-        <LinearLayout
+            android:scrollbars="none">
+
+            <LinearLayout
                 android:id="@+id/layout_left_menu"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-        </LinearLayout>
-    </ScrollView>
-
-    <ScrollView
-            android:id="@+id/sv_right_menu"
-            android:scrollbars="none"
-            android:paddingRight="30dp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical">
-        <LinearLayout
-                android:id="@+id/layout_right_menu"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right">
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/left_custom_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/sv_right_menu"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:paddingRight="30dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/layout_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical">
 
         </LinearLayout>
     </ScrollView>
